@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <limits.h>
+
 #include "libft.h"
 
 int	main(void)
@@ -47,10 +46,10 @@ int	main(void)
 
 	// Test ft_strlen
 	printf("--->> Testing ft_isprint <<---\n");
-	printf("-- Test str Hello: %d\n", ft_strlen("Hello"));
-	printf("-- Test str NULL: %d\n", ft_strlen(NULL));
-	printf("-- Test str 'Testings c examples': %d\n", ft_strlen("Testings c examples"));
-
+	printf("-- Test str 'Hello': %zu\n", ft_strlen("Hello"));
+	// printf("-- Test str NULL: %d\n", ft_strlen(NULL));
+	printf("-- Test str 'Testings c examples': %zu\n", ft_strlen("Testings c examples"));
+	printf("-- Test str void: %zu\n", ft_strlen(""));
 
 
 
