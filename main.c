@@ -51,7 +51,9 @@ int	main(void)
 	printf("-- Test str 'Testings c examples': %zu\n", ft_strlen("Testings c examples"));
 	printf("-- Test str void: %zu\n", ft_strlen(""));
 
-
+	printf("--->> Testing ft_memset <<---\n");
+	char str1[] = "holaaa"; 
+	printf("-- Test str 'hola' to $: %p\n", ft_memset(str1, 'c', 3));
 
 
 	return (0);
