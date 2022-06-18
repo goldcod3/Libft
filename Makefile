@@ -6,7 +6,7 @@
 #    By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 15:25:30 by lgomes-o          #+#    #+#              #
-#    Updated: 2022/06/18 15:25:33 by lgomes-o         ###   ########.fr        #
+#    Updated: 2022/06/18 16:30:59 by lgomes-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,27 +18,33 @@ LIB = libft.h
 
 FILES =	 ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	 ft_isascii.c ft_isprint.c ft_strlen.c\
-	 ft_memset.c
+	 ft_strchr.c\
+	 ft_memset.c ft_toupper.c ft_tolower.c
 
 OBJS = $(FILES:.c=.o)
 
 # Program Rules
 all: $(NAME)
+	@echo "*--> Program Compiled Sucess! <--*"
 
 # Compile libft.a
 $(NAME): $(OBJS) $(LIB)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
+	@echo "*--> libft.a Compiled Sucess! <--*"
 
 # Compile Objects
 $(OBJS): $(FILES) $(LIB)
-	gcc $(CFLAGS) -c $(FILES)
+	@gcc $(CFLAGS) -c $(FILES)
+	@echo "*--> Objects Compiled Sucess! <--*"
 
 # Clean rules
 clean:
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS)
+	@echo "*--> Cleaning Objects <--*"
 
 fclean:	clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "*--> Cleaning libft.a <--*"
 
 re:	fclean all
