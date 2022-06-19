@@ -6,7 +6,7 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:55:05 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/06/19 16:36:52 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/06/19 20:46:11 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ size_t		ft_strlcat(char *d, char *s, size_t size);
 size_t		ft_strlen(const char *str);
 
 void		*ft_memset(void *str, int c, size_t n);
-
+void		*ft_memmove(void *d, const void *s, size_t n);
+void		*ft_memcpy(void *restrict d, const void *restrict s, size_t n);
+void		ft_bzero(void *s, size_t n);
 #endif

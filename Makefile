@@ -6,7 +6,7 @@
 #    By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 15:25:30 by lgomes-o          #+#    #+#              #
-#    Updated: 2022/06/19 16:35:24 by lgomes-o         ###   ########.fr        #
+#    Updated: 2022/06/19 20:40:41 by lgomes-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ FILES =	 ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	 ft_isascii.c ft_isprint.c ft_strlen.c\
 	 ft_strchr.c ft_strrchr.c ft_strnstr.c\
 	 ft_strncmp.c ft_strlcpy.c ft_strlcat.c\
-	 ft_memset.c
+	 ft_bzero.c ft_memset.c ft_memmove.c\
+	 ft_memcpy.c
 
 OBJS = $(FILES:.c=.o)
 
