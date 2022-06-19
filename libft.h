@@ -6,7 +6,7 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:55:05 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/06/19 20:46:11 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/06/19 21:51:39 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <unistd.h>
 
 /*
- * Part 1 - Functions of libc
- */
+**  >> Functions of libc
+*/
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -30,6 +30,7 @@ int			ft_toupper(int c);
 int			ft_tolower(int c);
 int			ft_atoi(const char *str);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 char		*ft_strchr(const char *str, int c);
 char		*ft_strrchr(const char *str, int c);
@@ -39,8 +40,10 @@ size_t		ft_strlcpy(char *d, char *s, size_t size);
 size_t		ft_strlcat(char *d, char *s, size_t size);
 size_t		ft_strlen(const char *str);
 
+void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *str, int c, size_t n);
 void		*ft_memmove(void *d, const void *s, size_t n);
+void		*ft_memchr(void *s, int c, size_t n);
 void		*ft_memcpy(void *restrict d, const void *restrict s, size_t n);
-void		ft_bzero(void *s, size_t n);
+
 #endif
