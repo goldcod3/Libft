@@ -6,7 +6,7 @@
 #    By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 15:25:30 by lgomes-o          #+#    #+#              #
-#    Updated: 2022/06/18 22:36:45 by lgomes-o         ###   ########.fr        #
+#    Updated: 2022/06/19 16:35:24 by lgomes-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,11 @@ NAME = libft.a
 LIB = libft.h
 
 FILES =	 ft_isalpha.c ft_isdigit.c ft_isalnum.c\
+	 ft_atoi.c ft_toupper.c ft_tolower.c\
 	 ft_isascii.c ft_isprint.c ft_strlen.c\
 	 ft_strchr.c ft_strrchr.c ft_strnstr.c\
-	 ft_strncmp.c\
-	 ft_memset.c ft_toupper.c ft_tolower.c
+	 ft_strncmp.c ft_strlcpy.c ft_strlcat.c\
+	 ft_memset.c
 
 OBJS = $(FILES:.c=.o)
 
