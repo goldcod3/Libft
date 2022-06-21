@@ -6,7 +6,7 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:55:05 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/06/21 16:20:16 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/06/22 01:02:30 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 
 /*
-**  >> Functions of libc
+**  >> Functions of libc [Part 1]
 */
 
 int			ft_isalpha(int c);
@@ -47,5 +47,13 @@ void		*ft_memmove(void *d, const void *s, size_t n);
 void		*ft_memchr(void *s, int c, size_t n);
 void		*ft_memcpy(void *restrict d, const void *restrict s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
+
+/*
+** >> Aditional functions [Part 2]
+*/
+
+char		*ft_substr(const char *s, unsigned int start, size_t len);
+char		*ft_strjoin(const char *s1, const char *s2);
+char		*ft_strtrim(const char *s1, const char *set);
 
 #endif
