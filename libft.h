@@ -6,7 +6,7 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:55:05 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/06/22 01:02:30 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/06/24 13:45:32 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void		*ft_calloc(size_t count, size_t size);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strjoin(const char *s1, const char *s2);
 char		*ft_strtrim(const char *s1, const char *set);
+char		**ft_split(const char *s, char c);
 
 #endif
