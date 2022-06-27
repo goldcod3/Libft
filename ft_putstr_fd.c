@@ -6,7 +6,7 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 18:23:16 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/06/26 18:30:22 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:07:29 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,16 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
-	i = 0;
-	while (*(s + i) != '\0')
-	{
-		ft_putchar_fd(*(s + i), fd);
-		i++;
-	}
+	if (s != NULL)
+	{	
+		i = 0;
+		if (*(s + i) != '\0')
+		{
+			while (*(s + i) != '\0')
+			{
+				ft_putchar_fd(*(s + i), fd);
+				i++;
+			}
+		}
+	}	
 }

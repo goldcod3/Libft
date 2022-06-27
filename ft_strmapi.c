@@ -6,7 +6,7 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:08:39 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/06/27 12:20:50 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:06:16 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	i;
 
-	if (*s != '\0')
+	if (s != NULL)
 	{
 		str = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
+		if (str == NULL)
+			return (NULL);
 		i = 0;
 		while (*(s + i) != '\0')
 		{
@@ -28,5 +30,5 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 		}
 		return (str);
 	}
-	return (0);
+	return (NULL);
 }

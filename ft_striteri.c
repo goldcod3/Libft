@@ -6,7 +6,7 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:22:49 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/06/27 12:31:56 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:06:54 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
-	if (*s != '\0')
+	if (s != NULL)
 	{
 		i = 0;
 		while (*(s + i) != '\0')

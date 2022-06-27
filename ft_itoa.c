@@ -6,25 +6,27 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 20:58:12 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/06/27 02:02:23 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:39:21 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_get_size(int num)
+static unsigned int	ft_get_size(int num)
 {
-	size_t	i;
+	long int		ln;
+	size_t			i;
 
 	i = 1;
-	if (num < 0)
+	ln = num;
+	if (ln < 0)
 	{
-		num *= -1;
+		ln *= -1;
 		i++;
 	}
-	while (num >= 10)
+	while (ln >= 10)
 	{
-		num /= 10;
+		ln /= 10;
 		i++;
 	}
 	return (i);
@@ -32,25 +34,29 @@ static size_t	ft_get_size(int num)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	size_t	size;
-	size_t	i;
+	char		*str;
+	long int	ln;
+	size_t		size;
+	size_t		i;
 
 	size = ft_get_size(n);
 	str = (char *) ft_calloc(size + 1, sizeof(char));
+	if (str == NULL)
+		return (NULL);
 	i = 0;
-	if (n < 0)
+	ln = (long int)n;
+	if (ln < 0)
 	{
 		*(str + i) = '-';
-		n *= -1;
+		ln *= -1;
 	}
 	i = size - 1;
-	while (n >= 10)
+	while (ln >= 10)
 	{
-		*(str + i) = (n % 10) + '0';
-		n /= 10;
+		*(str + i) = (ln % 10) + '0';
+		ln /= 10;
 		i--;
 	}
-	*(str + i) = (n % 10) + '0';
+	*(str + i) = (ln % 10) + '0';
 	return (str);
 }
