@@ -6,11 +6,14 @@
 #    By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 15:25:30 by lgomes-o          #+#    #+#              #
-#    Updated: 2022/06/26 18:53:59 by lgomes-o         ###   ########.fr        #
+#    Updated: 2022/06/27 12:58:17 by lgomes-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Variable Options 
+########################
+### Variable Options ###
+########################
+
 CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
@@ -25,27 +28,37 @@ FILES =	 ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	 ft_memcpy.c ft_memchr.c ft_memcmp.c\
 	 ft_calloc.c ft_strdup.c ft_substr.c\
 	 ft_strjoin.c ft_strtrim.c ft_split.c\
+	 ft_itoa.c ft_strmapi.c ft_striteri.c\
 	 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 	 ft_putnbr_fd.c
 
 OBJS = $(FILES:.c=.o)
 
-# Program Rules
+#####################
+### Program Rules ###
+#####################
+
 all: $(NAME)
 	@echo "*--> Program Compiled Sucess! <--*"
 
-# Compile libft.a
+### Compile libft.a ###
 $(NAME): $(OBJS) $(LIB)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@echo "*--> libft.a Compiled Sucess! <--*"
 
-# Compile Objects
+#######################
+### Compile Objects ###
+#######################
+
 $(OBJS): $(FILES) $(LIB)
 	@gcc $(CFLAGS) -c $(FILES)
 	@echo "*--> Objects Compiled Sucess! <--*"
 
-# Clean rules
+###################
+### Clean rules ###
+###################
+
 clean:
 	@rm -rf $(OBJS)
 	@echo "*--> Cleaning Objects <--*"
@@ -55,3 +68,8 @@ fclean:	clean
 	@echo "*--> Cleaning libft.a <--*"
 
 re:	fclean all
+
+###################
+### Bonus rules ###
+###################
+
