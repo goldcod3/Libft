@@ -6,7 +6,7 @@
 #    By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 15:25:30 by lgomes-o          #+#    #+#              #
-#    Updated: 2022/06/30 19:21:09 by lgomes-o         ###   ########.fr        #
+#    Updated: 2022/06/30 21:00:34 by lgomes-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ FILES =	 ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	 ft_putnbr_fd.c
 
 B_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
-	 ft_lstlast.c ft_lstadd_back.c
+	 ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
+	 ft_lstclear.c
 
 OBJS = $(FILES:.c=.o)
 
