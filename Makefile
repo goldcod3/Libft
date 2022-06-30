@@ -6,7 +6,7 @@
 #    By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 15:25:30 by lgomes-o          #+#    #+#              #
-#    Updated: 2022/06/27 12:58:17 by lgomes-o         ###   ########.fr        #
+#    Updated: 2022/06/30 19:21:09 by lgomes-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,12 @@ FILES =	 ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 	 ft_putnbr_fd.c
 
+B_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
+	 ft_lstlast.c ft_lstadd_back.c
+
 OBJS = $(FILES:.c=.o)
+
+B_OBJS = $(B_FILES:.c=.o)
 
 #####################
 ### Program Rules ###
@@ -41,19 +46,25 @@ OBJS = $(FILES:.c=.o)
 all: $(NAME)
 	@echo "*--> Program Compiled Sucess! <--*"
 
-### Compile libft.a ###
 $(NAME): $(OBJS) $(LIB)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@echo "*--> libft.a Compiled Sucess! <--*"
 
-#######################
-### Compile Objects ###
-#######################
-
 $(OBJS): $(FILES) $(LIB)
 	@gcc $(CFLAGS) -c $(FILES)
-	@echo "*--> Objects Compiled Sucess! <--*"
+	@echo "*--> Program Objects Compiled! <--*"
+
+###################
+### Bonus Rules ###
+###################
+
+bonus: all $(B_OBJS)
+	@echo "*--> Bonus Compiled Sucess! <--*"
+
+$(B_OBJS): $(B_FILES) $(LIB)
+	@gcc $(CFLAGS) -c $(B_FILES)
+	@echo "*--> Bonus Objects Compiled! <--*"
 
 ###################
 ### Clean rules ###
@@ -61,6 +72,7 @@ $(OBJS): $(FILES) $(LIB)
 
 clean:
 	@rm -rf $(OBJS)
+	@rm -rf $(B_OBJS)
 	@echo "*--> Cleaning Objects <--*"
 
 fclean:	clean
@@ -69,7 +81,4 @@ fclean:	clean
 
 re:	fclean all
 
-###################
-### Bonus rules ###
-###################
-
+.PHONY: all bonus clean fclean re
