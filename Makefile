@@ -6,9 +6,10 @@
 #    By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 15:25:30 by lgomes-o          #+#    #+#              #
-#    Updated: 2022/06/30 21:00:34 by lgomes-o         ###   ########.fr        #
+#    Updated: 2022/07/01 02:25:53 by lgomes-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 ########################
 ### Variable Options ###
@@ -32,13 +33,14 @@ FILES =	 ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 	 ft_putnbr_fd.c
 
-B_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
+B_FILES = ft_lstsize.c ft_lstnew.c ft_lstadd_front.c\
 	 ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
-	 ft_lstclear.c
+	 ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJS = $(FILES:.c=.o)
 
 B_OBJS = $(B_FILES:.c=.o)
+
 
 #####################
 ### Program Rules ###
@@ -56,6 +58,7 @@ $(OBJS): $(FILES) $(LIB)
 	@gcc $(CFLAGS) -c $(FILES)
 	@echo "*--> Program Objects Compiled! <--*"
 
+
 ###################
 ### Bonus Rules ###
 ###################
@@ -66,6 +69,7 @@ bonus: all $(B_OBJS)
 $(B_OBJS): $(B_FILES) $(LIB)
 	@gcc $(CFLAGS) -c $(B_FILES)
 	@echo "*--> Bonus Objects Compiled! <--*"
+
 
 ###################
 ### Clean rules ###
@@ -82,4 +86,3 @@ fclean:	clean
 
 re:	fclean all
 
-.PHONY: all bonus clean fclean re
