@@ -6,23 +6,11 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 21:50:24 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/07/01 02:21:42 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/07/01 18:37:06 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static t_list	*get_newlst(t_list *old, void *cont)
-{
-	t_list	*new;
-
-	new = (t_list *) malloc(sizeof(t_list));
-	if (new == NULL)
-		return (NULL);
-	new->content = cont;
-	new->next = old->next;
-	return (new);
-}	
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -31,18 +19,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (lst == NULL || f == NULL)
 		return (NULL);
-	newlst = get_newlst(lst, f(lst->content));
-	tmp = newlst;
-	while (lst->next != NULL)
+	newlst = NULL;
+	while (lst != NULL)
 	{
-		lst = lst->next;
-		newlst = get_newlst(lst, f(lst->content));
+		tmp = ft_lstnew(f(lst->content));
 		if (tmp == NULL)
 		{
-			del(tmp->content);
-			free(tmp);
+			ft_lstclear(&newlst, del);
 			return (NULL);
 		}
+		ft_lstadd_back(&newlst, tmp);
+		lst = lst->next;
 	}
-	return (tmp);
+	return (newlst);
 }

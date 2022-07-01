@@ -6,7 +6,7 @@
 #    By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 15:25:30 by lgomes-o          #+#    #+#              #
-#    Updated: 2022/07/01 02:25:53 by lgomes-o         ###   ########.fr        #
+#    Updated: 2022/07/01 19:01:01 by lgomes-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ FILES =	 ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 	 ft_putnbr_fd.c
 
-B_FILES = ft_lstsize.c ft_lstnew.c ft_lstadd_front.c\
+B_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
 	 ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
 	 ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
@@ -63,10 +63,12 @@ $(OBJS): $(FILES) $(LIB)
 ### Bonus Rules ###
 ###################
 
-bonus: all $(B_OBJS)
+bonus: $(OBJS) $(B_OBJS)
+	@ar rc $(NAME) $(B_OBJS) $(OBJS)
+	@ranlib $(NAME)
 	@echo "*--> Bonus Compiled Sucess! <--*"
 
-$(B_OBJS): $(B_FILES) $(LIB)
+$(B_OBJS): $(OBJS) $(LIB)
 	@gcc $(CFLAGS) -c $(B_FILES)
 	@echo "*--> Bonus Objects Compiled! <--*"
 
