@@ -6,4 +6,4 @@ La librería tendrá un montón de funciones de propósito general en las que se
 
 Proyecto finalizado.
 
-[![lgomes-o's 42 Libft Score](https://badge42.vercel.app/api/v2/cl4osmqtg006109jvtxcd7k3u/project/2620046)]
+![lgomes-o's 42 Libft Score](https://badge42.vercel.app/api/v2/cl4osmqtg006109jvtxcd7k3u/project/2620046)
