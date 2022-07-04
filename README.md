@@ -1,9 +1,9 @@
 # Libft
-Libreria libft desarrollada en 42 Madrid.
+Libft library developed in 42 Madrid.
 
-Resumen: Este proyecto consiste en programar una librería en C.
-La librería tendrá un montón de funciones de propósito general en las que se apoyarán futuros programas.
+Resume: This project consists of programming a library in C. 
+The library will have a lot of general purpose functions on which future programs will be based.
 
-Proyecto finalizado.
+Finished project.
 
 ![lgomes-o's 42 Libft Score](https://badge42.vercel.app/api/v2/cl4osmqtg006109jvtxcd7k3u/project/2620046)
